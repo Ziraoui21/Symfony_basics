@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}index - Product{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                {% for msg in app.flashes('msg') %}
+                    <div class="alert alert-primary" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Opération</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <th>{{ product.id }}</th>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.price }}</td>
+                                <td>{{ product.body }}</td>
+                                <td><a href="{{url('app_product_detail',{id : product.id})}}">show</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            <div>
+        <div>
+    <div>
+{% endblock %}
