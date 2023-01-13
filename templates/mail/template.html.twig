@@ -2,3 +2,6 @@
 <p>{{ product.name }}</p><br>
 <p>{{ product.price }}</p><br>
 <p>{{ product.body }}</p>
+
+{# '@images/' refers to the Twig namespace defined earlier #}
+<img width="100px" height="100px" src="{{ email.image('@images/logo.png') }}" alt="Logo">
